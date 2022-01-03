@@ -17,7 +17,7 @@ import br.com.adriano.loja.modelo.Produto;
 import br.com.adriano.loja.util.JPAUtil;
 import br.com.adriano.loja.vo.RelatorioDeVendasVo;
 
-public class CadastroDePedidio {
+public class CadastroDePedido {
 
 	public static void main(String[] args) {
 		popularBancoDeDados();
