@@ -10,6 +10,7 @@ import javax.persistence.Persistence;
 import br.com.adriano.loja.dao.CategoriaDao;
 import br.com.adriano.loja.dao.ProdutoDao;
 import br.com.adriano.loja.modelo.Categoria;
+import br.com.adriano.loja.modelo.CategoriaId;
 import br.com.adriano.loja.modelo.Produto;
 import br.com.adriano.loja.util.JPAUtil;
 
@@ -54,6 +55,8 @@ public class CadastroDeProduto {
 		
 		categoriaDao.cadastrar(celulares);
 		produtoDao.cadastrar(celular);
+		
+		//em.find(Categoria.class, new CategoriaId("CELULARES","EITA"));
 		
 		em.getTransaction().commit();
 		em.close();
