@@ -18,7 +18,7 @@ public class CategoriaDao {
 		this.entityManager.merge(categoria);
 	}
 	public void remover(Categoria categoria) {
-		Categoria c=categoria=entityManager.merge(categoria);
+		Categoria c=entityManager.merge(categoria);
 		this.entityManager.remove(c);
 	}
 }
