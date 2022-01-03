@@ -22,15 +22,29 @@ public class CadastroDeProduto {
 				celulares);
 		
 		EntityManager em = JPAUtil.getEntityManager();
-		ProdutoDao produtoDao = new ProdutoDao(em);
-		CategoriaDao categoriaDao = new CategoriaDao(em);
-		
 		em.getTransaction().begin();
 		
-		categoriaDao.cadastrar(celulares);
-		produtoDao.cadastrar(celular);
+		em.persist(celulares);
+		celulares.setNome("EITA");
 		
-		em.getTransaction().commit();
-		em.close();
+		em.flush();
+		em.clear();
+		
+		celulares = em.merge(celulares);
+		celulares.setNome("EITA 2");
+		em.flush();
+		em.clear();
+		em.remove(celulares);
+		em.flush();
+//		ProdutoDao produtoDao = new ProdutoDao(em);
+//		CategoriaDao categoriaDao = new CategoriaDao(em);
+//		
+//		em.getTransaction().begin();
+//		
+//		categoriaDao.cadastrar(celulares);
+//		produtoDao.cadastrar(celular);
+//		
+//		em.getTransaction().commit();
+//		em.close();
 	}
 }

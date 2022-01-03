@@ -14,5 +14,6 @@ public class ProdutoDao {
 	public void cadastrar(Produto produto) {
 		this.entityManager.persist(produto);
 	}
+	
 }
 
